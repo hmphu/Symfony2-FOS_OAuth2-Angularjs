@@ -36,20 +36,20 @@ class ApiProjectsController extends Controller
     {
         $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
-        $name = $request->request->get('name');
+        $title = $request->request->get('title');
         $type = (int)$request->request->get('type') || 1;
 
         $headers = [];
         $headers[] = "Authorization: " . $user->getId();
         $url = "core.mobium.pro/";
-        $data = ['title' => $name];
+        $data = ['title' => $title];
 
         $project = $this->performRequest($url, $data, $headers);
 
         $temp = new Project();
         $temp->setId($project['id']);
         $temp->setUser($user);
-        //$temp->setTitle($name);
+        //$temp->setTitle($title);
 
         $em->persist($temp);
         $em->flush();
