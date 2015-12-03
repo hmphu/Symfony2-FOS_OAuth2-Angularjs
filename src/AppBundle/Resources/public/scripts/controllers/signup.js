@@ -15,7 +15,7 @@
             var username = $scope.username;
             var password = $scope.password;
             if (username !== "" && password !== "") {
-                userService.registration(username, password).then(function(data) {
+                userService.signup(username, password).then(function(data) {
                     if (data) {
                         $state.go('core.login');
                     }
