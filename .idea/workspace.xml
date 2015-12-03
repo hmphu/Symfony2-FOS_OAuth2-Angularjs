@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectService.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="projectService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/projectService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58536583">
-              <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -48,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/tokenService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+              <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -104,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="userService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/userService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.7804878">
+              <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -173,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/views/tmpl/discover.html" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/views/tmpl/discover-content.html" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/views/tmpl/discover-create.html" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/userService.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ApiUserController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/controllers/login.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/controllers/registration.js" />
@@ -188,6 +187,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/run.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/tokenService.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/projectService.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/userService.js" />
       </list>
     </option>
   </component>
@@ -1122,14 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/userService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Security/Authentication/Token/WsseUserToken.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.666667">
@@ -1180,18 +1172,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/tokenService.js">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/projectService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/projectService.js">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/tokenService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58536583">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/public/scripts/services/userService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7804878">
+          <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
           <folding />
         </state>
       </provider>

@@ -8,9 +8,9 @@
     angular.module('app')
         .factory('userService', userService);
 
-    userService.$inject = ['dpd', '$http', 'dpdConfig', '$state', '$cookies', 'digestService'];
+    userService.$inject = ['dpd', '$http', 'dpdConfig', '$state', '$cookies', 'digestService', 'tokenService'];
 
-    function userService(dpd, $http, dpdConfig, $state, $cookies, digestService){
+    function userService(dpd, $http, dpdConfig, $state, $cookies, digestService, tokenService){
         userService = this;
 
         userService.login = login;
@@ -44,6 +44,8 @@
                             $cookies.put('id', uid);
                             $cookies.put('username', username);
                             $cookies.put('secret', secret);
+
+                            tokenService.wrapHttp();
 
                             return true;
                         }, function(err){
@@ -86,6 +88,8 @@
                 .remove('id')
                 .remove('username')
                 .remove('secret');
+
+            tokenService.clearCredentials();
 
             return true;
         } // end login
