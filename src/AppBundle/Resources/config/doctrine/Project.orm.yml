@@ -1,0 +1,18 @@
+AppBundle\Entity\Project:
+    type:  entity
+    table: project
+    id:
+        id:
+            type: integer
+        user:
+            associationKey: true
+    fields:
+        title:
+            type: string
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: projects
+            joinColumn:
+                name: user_id
+                referencedColumnName: id

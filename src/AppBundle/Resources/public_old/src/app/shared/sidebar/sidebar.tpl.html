@@ -1,0 +1,32 @@
+<!-- Sidebar user panel -->
+<div class="user-panel">
+    <div class="pull-left image">
+        <img src="../../img/avatar3.png" class="img-circle" alt="User Image" />
+    </div>
+    <div class="pull-left info">
+        <p>Hello, Jane</p>
+
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+    </div>
+</div>
+<!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu">
+    <li ng-repeat="menu in menus" ng-class="{'treeview': menu.children}" treeview isTreeView="{{menu.children}}">
+        <a href="{{menu.state}}" ng-if="menu.state">
+            <i class="{{menu.class}}"></i>
+            <span>{{menu.text}}</span>
+            <small class="badge pull-right bg-{{menu.badge.color || green}}" ng-if="menu.badge">{{menu.badge.text}}</small>
+        </a>
+        <a href="#" ng-if="!menu.state">
+            <i class="{{menu.class}}"></i>
+            <span>{{menu.text}}</span>
+            <i class="fa fa-angle-left pull-right" ng-if="!menu.badge"></i>
+            <small class="badge pull-right bg-{{menu.badge.color || green}}" ng-if="menu.badge">{{menu.badge.text}}</small>
+        </a>
+        <ul class="treeview-menu" ng-if="menu.children">
+            <li ng-repeat="child in menu.children">
+                <a href="{{child.state}}"><i class="{{child.class}}"></i>{{child.text}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>

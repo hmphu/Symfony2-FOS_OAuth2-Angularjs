@@ -1,0 +1,28 @@
+AppBundle\Entity\User:
+    type:  entity
+    table: user
+    id:
+        id:
+            type: guid
+            generator:
+                strategy: UUID
+    fields:
+        firstName:
+            type: string
+            nullable: true
+        lastName:
+            type: string
+            nullable: true
+        phone:
+            type: string
+            length: 20
+            nullable: true
+        balance:
+            type: integer
+            nullable: true
+            options:
+                default: 0
+    oneToMany:
+        projects:
+            targetEntity: Project
+            mappedBy: user
