@@ -2,7 +2,7 @@ angular.module('app')
     .run(['$rootScope', '$state', '$stateParams', run])
 
 
-function run($rootScope, $state, $stateParams) {
+function run($rootScope, $state, $stateParams, $http, $cookies, tokenService) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$on('$stateChangeSuccess', function(event, toState) {
@@ -21,4 +21,6 @@ function run($rootScope, $state, $stateParams) {
         });
         $rootScope.containerClass = toState.containerClass;
     });
+
+
 }

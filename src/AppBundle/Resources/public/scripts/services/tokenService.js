@@ -60,6 +60,12 @@
                 delete $http.defaults.headers.common['X-WSSE'];
             };
 
+            tokenHandler.wrapHttp = function() {
+                if ( (typeof username != 'undefined') && (typeof secret != 'undefined') ) {
+                    $http.defaults.headers.common['X-WSSE'] = tokenHandler.getCredentials(username, secret);
+                }
+            };
+
             // Token wrapper for resource actions
             tokenHandler.wrapActions = function( resource, actions ) {
                 var wrapperResource = resource;
@@ -75,7 +81,7 @@
             var tokenWrapper = function ( resource, action ) {
                 resource['_'+action] = resource[action];
                 resource[action] = function ( data, success, error ) {
-                    if ( (typeof data.username != 'undefined') && (typeof data.secret != 'undefined') ) {
+                    if ( (typeof username != 'undefined') && (typeof secret != 'undefined') ) {
                         $http.defaults.headers.common['X-WSSE'] = tokenHandler.getCredentials(username, secret);
                         /*delete data.username;
                         delete data.secret;*/

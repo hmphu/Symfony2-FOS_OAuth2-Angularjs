@@ -8,9 +8,9 @@
     angular.module('app')
         .factory('projectService', projectService);
 
-    projectService.$inject = ['dpd', '$http', 'dpdConfig'];
+    projectService.$inject = ['dpd', '$http', 'dpdConfig', 'tokenService'];
 
-    function projectService(dpd, $http, dpdConfig){
+    function projectService(dpd, $http, dpdConfig, tokenService){
         projectService = this;
 
         projectService.create = create;
@@ -23,7 +23,9 @@
                 type: type,
                 ignoreLoadingBar: true
             };
-            return $http.post(dpdConfig.serverRoot + 'api/projects', data).then(
+
+            var http = tokenService.wrapHttp($http.post(dpdConfig.serverRoot + 'api/projects', data));
+            return http.then(
                 function(session, error) {
                     if (error) {
                         console.log(error.message);
