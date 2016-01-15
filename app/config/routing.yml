@@ -1,7 +1,11 @@
 app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+    resource: "@AppBundle/Resources/config/routing.yml"
+    type:     rest
+    prefix:   /api
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"

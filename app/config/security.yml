@@ -2,7 +2,7 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
+        FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -21,24 +21,17 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        main:
-            pattern: ^/
-            form_login:
-                provider: fos_userbundle
-                csrf_provider: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
-
-            logout:       true
-            anonymous:    true
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
-
-    access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+        oauth_token:                                   # Everyone can access the access token URL.
+            pattern: ^/oauth/v2/token
+            security: false
+        signup:
+            pattern: ^/api/signup
+            security: false
+        login:
+            pattern: ^/api/login
+            security: false
+        api:
+            pattern: ^/api                                # All URLs are protected
+            fos_oauth: true                            # OAuth2 protected resource
+            stateless: true                            # Do no set session cookies
+            anonymous: false

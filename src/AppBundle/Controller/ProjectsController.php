@@ -9,32 +9,26 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Project;
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use FOS\RestBundle\Controller\Annotations\RouteResource;
 
 /**
- * ApiUsersController
- *
- * @Route("/api/projects")
+ * @RouteResource("Projects")
  */
-class ApiProjectsController extends Controller
+class ProjectsController extends FOSRestController
 {
     /**
      * create project
      *
      * @ApiDoc()
-     *
-     * @Route("/")
-     * @Method({"POST"})
      */
-    public function createAction(Request $request)
+    public function postAction(Request $request)
     {
-        $user = $this->getUser();
+        /*$user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         $title = $request->request->get('title');
         $type = (int)$request->request->get('type') || 1;
@@ -52,9 +46,12 @@ class ApiProjectsController extends Controller
         //$temp->setTitle($title);
 
         $em->persist($temp);
-        $em->flush();
+        $em->flush();*/
 
-        return new JsonResponse(array('id' => $project['id']));
+        $data = ['id' => 1];
+        $view = $this->view($data, 200);
+
+        return $this->handleView($view);
     }
 
     private function performRequest($url, $data, $headers, $type = "POST") {

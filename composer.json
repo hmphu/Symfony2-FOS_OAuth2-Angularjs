@@ -23,7 +23,9 @@
         "jms/di-extra-bundle": "*",
         "friendsofsymfony/user-bundle": "*",
         "nelmio/api-doc-bundle": "*",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "friendsofsymfony/oauth-server-bundle": "^1.4",
+        "guzzlehttp/guzzle": "^6.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

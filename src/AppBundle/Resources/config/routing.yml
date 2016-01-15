@@ -1,0 +1,11 @@
+signup:
+    type: rest
+    resource: AppBundle\Controller\SignupController
+
+projects:
+    type: rest
+    resource: AppBundle\Controller\ProjectsController
+
+login:
+    type: rest
+    resource: AppBundle\Controller\LoginController

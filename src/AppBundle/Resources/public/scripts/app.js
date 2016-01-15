@@ -17,7 +17,7 @@
         'angular-loading-bar',
         'angularBootstrapNavTree',
         'ui.tree',
-        'dpd'
+        'Restangular'
     ];
 
     Array.prototype.last = function(){
